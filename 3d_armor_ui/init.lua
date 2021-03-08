@@ -36,16 +36,21 @@ unified_inventory.register_page("armor", {
 			"label[0,0;"..F(S("Armor")).."]"..
 			"list[detached:"..name.."_armor;armor;0,"..fy..";2,3;]"..
 			"image[2.5,"..(fy - 0.25)..";2,4;"..armor.textures[name].preview.."]"..
-			"label[5.0,"..(fy + 0.0)..";"..F(S("Level"))..": "..armor.def[name].level.."]"..
-			"label[5.0,"..(fy + 0.5)..";"..F(S("Heal"))..":  "..armor.def[name].heal.."]"..
+			"label[5.0,"..(fy - 0.25)..";"..F(S("Level"))..": "..armor.def[name].level.."]"..
+			"label[5.0,"..(fy + 0.25)..";"..F(S("Heal"))..":  "..armor.def[name].heal.."]"..
+
+			"label[5.0,"..(fy + 0.75)..";"..F(S("Speed"))..":  "..armor.def[name].speed.."]"..
+			"label[5.0,"..(fy + 1.25)..";"..F(S("Jump"))..":  "..armor.def[name].jump.."]"..
+			"label[5.0,"..(fy + 1.75)..";"..F(S("Gravity"))..":  "..armor.def[name].gravity.."]"..
+
 			"listring[current_player;main]"..
 			"listring[detached:"..name.."_armor;armor]"
 		if armor.config.fire_protect then
-			formspec = formspec.."label[5.0,"..(fy + 1.0)..";"..
+			formspec = formspec.."label[5.0,"..(fy + 2.25)..";"..
 				F(S("Fire"))..":  "..armor.def[name].fire.."]"
 		end
 		if has_technic then
-			formspec = formspec.."label[5.0,"..(fy + 1.5)..";"..
+			formspec = formspec.."label[5.0,"..(fy + 2.75)..";"..
 				F(S("Radiation"))..":  "..armor.def[name].groups["radiation"].."]"
 		end
 		return {formspec=formspec}

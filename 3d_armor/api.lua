@@ -569,6 +569,9 @@ armor.get_armor_formspec = function(self, name, listring)
 	for _, attr in pairs(self.attributes) do
 		formspec = formspec:gsub("armor_attr_"..attr, armor.def[name][attr])
 	end
+	for _, phy in pairs(self.physics) do
+		formspec = formspec:gsub("armor_phy_"..phy, armor.def[name][phy])
+	end
 	for group, _ in pairs(self.registered_groups) do
 		formspec = formspec:gsub("armor_group_"..group,
 			armor.def[name].groups[group])
