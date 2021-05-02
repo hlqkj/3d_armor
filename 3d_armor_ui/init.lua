@@ -44,22 +44,22 @@ unified_inventory.register_page("armor", {
 				perplayer_formspec.form_header_x, perplayer_formspec.form_header_y, F(S("Armor")))..
 			string.format("list[detached:%s_armor;armor;%f,%f;2,3;]",
 				name, gridx + ui.list_img_offset, gridy + ui.list_img_offset) ..
-			"image[3.5,"..(fy - 0.25)..";2,4;"..armor.textures[name].preview.."]"..
-			"label[6.0,"..(fy - 0.25)..";"..F(S("Level"))..": "..armor.def[name].level.."]"..
-			"label[6.0,"..(fy + 0.25)..";"..F(S("Heal"))..":  "..armor.def[name].heal.."]"..
+			"image[3.5,"..(fy + 0.00)..";2,4;"..armor.textures[name].preview.."]"..
+			"label[6.0,"..(fy + 0.50)..";"..F(S("Level"))..": "..armor.def[name].level.."]"..
+			"label[6.0,"..(fy + 1.00)..";"..F(S("Heal"))..":  "..armor.def[name].heal.."]"..
 
-			"label[6.0,"..(fy + 0.75)..";"..F(S("Speed"))..":  "..armor.def[name].speed.."]"..
-			"label[6.0,"..(fy + 1.25)..";"..F(S("Jump"))..":  "..armor.def[name].jump.."]"..
-			"label[6.0,"..(fy + 1.75)..";"..F(S("Gravity"))..":  "..armor.def[name].gravity.."]"..
+			"label[6.0,"..(fy + 1.50)..";"..F(S("Speed"))..":  "..armor.def[name].speed.."]"..
+			"label[6.0,"..(fy + 2.00)..";"..F(S("Jump"))..":  "..armor.def[name].jump.."]"..
+			"label[6.0,"..(fy + 2.50)..";"..F(S("Gravity"))..":  "..armor.def[name].gravity.."]"..
 
 			"listring[current_player;main]"..
 			"listring[detached:"..name.."_armor;armor]"
 		if armor.config.fire_protect then
-			formspec = formspec.."label[6.0,"..(fy + 2.25)..";"..
+			formspec = formspec.."label[6.0,"..(fy + 3.00)..";"..
 				F(S("Fire"))..":  "..armor.def[name].fire.."]"
 		end
 		if has_technic then
-			formspec = formspec.."label[6.0,"..(fy + 2.75)..";"..
+			formspec = formspec.."label[6.0,"..(fy + 3.50)..";"..
 				F(S("Radiation"))..":  "..armor.def[name].groups["radiation"].."]"
 		end
 		return {formspec=formspec}
